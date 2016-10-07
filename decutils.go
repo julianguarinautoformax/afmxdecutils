@@ -33,7 +33,9 @@ func ParseAutoFMXImageMetaInfo(jsonString []byte) (*AutoFMXImageMetaInfo, error)
 		}
 		hwAdd_ += string(o_.HwAdd[i])
 	}
-
+	if hwAdd_ == "AN:DR:OI:DB:UI:LD" {
+		hwAdd_ = "DE:AD:BE:EF:F0:00";
+	}
 	afmxMetaInfo := AutoFMXImageMetaInfo{}
 
 	/* UTC yy.MM.dd.HH.mm.ss.zzz*/
